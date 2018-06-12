@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+
+<html lang="en-us">
+
+  <head>
+
+    <meta charset="UTF-8">
+    <title>Creature Gifs!!</title>
+
+     
+    <link href="assets/css/reset.css" rel ="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
+    <link href="assets/css/style.css" rel ="stylesheet">
+  </head>
+
+  <body>
+    <div class="container">
+     
+      <div class="lbl_header">
+        <h3>***Creature Creature***</h3></br>
+        <h5>Click on the creature buttons to load the gifs for the existing creature buttons. Then click on any of the images to see the fun!</h5>
+          (Click once to activate the gif image and click again on it to pause it)
+        
+      </div>
+
+      <div class="row"  >
+          <div id = "creat_btn"></div>
+      </div>
+      <div class="row"  >
+          <div class ="col-sm-8">
+              <div id = "creature_gifs"></div>
+           
+          </div>
+          <div class ="col-sm-4">
+              <p id="newcr">You can add a new creature button by typing in their name & click the Submit button!!</p>
+              <input id="new_creature" type="text">
+              <button id="add" class= "btn btn-primary">Submit</button>
+          </div>
+      </div>
+    </div>
+   
+    
+    
+
+    <!-- jQuery -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+    <!-- Script -->
+    <script src="assets/javascript/app.js"></script>
+
+  </body>
+
+</html>
