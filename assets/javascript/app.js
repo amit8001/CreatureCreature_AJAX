@@ -41,7 +41,7 @@ $(document).on("click", ".btn_creature",function(){
     $("#creature_gifs").empty();
     console.log("You clicked on "+$(this).text());
     lmt+=10;   
-    var queryURL = "http://api.giphy.com/v1/gifs/search?q="+$(this).text()+"&api_key=dc6zaTOxFJmzC&limit="+lmt;
+    var queryURL = "https://api.giphy.com/v1/gifs/search?q="+$(this).text()+"&api_key=dc6zaTOxFJmzC&limit="+lmt;
     clicked_gif = $(this).text();
     
     console.log(queryURL);
@@ -57,7 +57,7 @@ $(document).on("click", ".btn_creature",function(){
 $(document).on("click", ".new_gifs",function(){
     lmt+=10;
     $("#creature_gifs").empty();
-    var queryURL = "http://api.giphy.com/v1/gifs/search?q="+clicked_gif+"&api_key=dc6zaTOxFJmzC&limit="+lmt;
+    var queryURL = "https://api.giphy.com/v1/gifs/search?q="+clicked_gif+"&api_key=dc6zaTOxFJmzC&limit="+lmt;
     console.log(queryURL);
 
     $.ajax({
