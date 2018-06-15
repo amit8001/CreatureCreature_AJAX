@@ -1,11 +1,14 @@
-
+//Defining global variables
 var animals = ["dog","ferret","turtle","hamster"];
 var img;
 var gifStart;
 var gifEnd;
+var clicked_gif;
 
+//call the renderbtns function to display the buttons
 renderbtns();
 
+//defining the renderbtns function
 function renderbtns(){
     for (var i=0;i<animals.length;i++){
         var anmlbtn = $("<button>");
@@ -17,9 +20,10 @@ function renderbtns(){
     }
 }
 
-
+//Handing the click event to add new creature buttons
 $("#add").on("click", addChar);
 
+//Below code also adds new buttons for the new creature by hitting Return key from keyboard
 $(document).keypress(function (e) {
     if (e.which == 13 || event.keyCode == 13) {
         //alert('enter key is pressed');
@@ -27,6 +31,7 @@ $(document).keypress(function (e) {
     }
 });
 
+//Defining the function to add the "new" creature button
 function addChar(){
     console.log($("#new_creature").val());
     var newamlbtn = $("<button>");
@@ -36,14 +41,14 @@ function addChar(){
     newamlbtn.addClass("btn-primary");
     $("#creat_btn").append(newamlbtn);
 }
-//var lmt = 0;
-var clicked_gif;
+
+//Handling the onclick event for one of the creature buttons
 $(document).on("click", ".btn_creature",function(){
     gifStart=0;
   //  lmt = 0;
     $("#creature_gifs").empty();
     console.log("You clicked on "+$(this).text());
-    //lmt+=10;   
+    //forming the query URL   
     var queryURL = "https://api.giphy.com/v1/gifs/search?q="+$(this).text()+"&api_key=dc6zaTOxFJmzC&limit=10";
     clicked_gif = $(this).text();
     
@@ -55,11 +60,8 @@ $(document).on("click", ".btn_creature",function(){
       }).then (load_gifs_api_call);
 })
 
-//var clik=1;
- 
+//Handling the onclick event on the "Load more images" button 
 $(document).on("click", ".new_gifs",function(){
-    //lmt+=10;
-    //$("#creature_gifs").empty();
     $(".div_ld_new_img").remove();
     var queryURL = "https://api.giphy.com/v1/gifs/search?q="+clicked_gif+"&api_key=dc6zaTOxFJmzC&limit=25";
     console.log(queryURL);
@@ -71,25 +73,24 @@ $(document).on("click", ".new_gifs",function(){
 
     });
 
+//Handling the "Play" and "Pause" state of the gifs when clicked
 $(document).on("click", ".crtgif",function(){
 
     var state = $(this).attr("data-state");
     var anmtdUrl = $(this).attr("animtd");
     var staticUrl = $(this).attr("static");
-
-//
-if (state == "still") {
-    $(this).attr("src",anmtdUrl);
-    $(this).attr("data-state","animate");
-  }
-  
-  if (state == "animate") {
-    $(this).attr("src",staticUrl);
-    $(this).attr("data-state","still");
-  }
-//
+    if (state == "still") {
+        $(this).attr("src",anmtdUrl);
+        $(this).attr("data-state","animate");
+    }
+    
+    if (state == "animate") {
+        $(this).attr("src",staticUrl);
+        $(this).attr("data-state","still");
+    }
 });
 
+//Defining a variable that is assigned a function. This variable is called during AJAX call pulls the data from API.
 var load_gifs_api_call = function(response) {
   
     gifEnd=(gifStart+10);
