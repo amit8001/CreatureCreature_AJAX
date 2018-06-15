@@ -1,3 +1,5 @@
+@media screen and (max-width: 980px) {
+
 .btn_creature {
   margin-left: 15px;
   margin-top: 20px;
@@ -30,8 +32,13 @@
 }
 .col-sm-8{
   border: 1px solid #9E9E9E;
-  position: relative;
+
 }
+.col-sm-4{
+  position: relative;
+
+}
+
 
 #newcr{
   font-weight: bold;
@@ -61,15 +68,96 @@ body {
   margin-left: -15px;
 }
 
-.new_gifs{
+.new_gifs {
   position: absolute;
-  bottom: 50px;
-  right: 100px;
-
+  top: 230px;
 }
-#add{
-  margin-left: 10px;
+#add {
+  margin-top: 17px;
 }
 #new_creature{
   margin-top: 10px;
 }
+}
+
+
+@media (min-width: 981px) and (max-width: 2500px) {
+
+  .btn_creature {
+    margin-left: 15px;
+    margin-top: 20px;
+    width: auto;
+    height: 50px;
+    text-align: center;
+  }
+  .crtgif{
+    width: 200px;
+    height: 200px;
+    margin-top: 10px;
+    margin-right: 5px;
+    margin-left: 5px;
+  }  
+  .animalblk{
+    float:left;
+  }
+  .after-animalblk{
+    clear:left;
+  }
+  .rating_p{
+    margin-top: 10px;
+    font-weight: bold;
+    margin-left: 5px;
+    margin-bottom: 0px;
+  
+  }
+  .col-sm-8,.col-sm-4{
+    margin-top: 15px;
+  }
+  .col-sm-8{
+    border: 1px solid #9E9E9E;
+  
+  }
+  .col-sm-4{
+    position: relative;
+  
+  }
+  
+  
+  #newcr{
+    font-weight: bold;
+    background-color:brown;
+    color: #FFF;
+    padding-left: 10px;
+    padding-right: 10px;
+    /*text-align: center;*/
+  }
+  
+  body {
+    /*background-image: url("../images/darkpallette.jpg");*/
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+  }
+  .lbl_header {
+    /* background: linear-gradient(to right, rgba(255,0,0,0), rgba(2,119,189,1)); */
+    background-color:brown;
+    color: #FFF;
+    text-align: center;
+    text-shadow: 1px 1px #000;
+    padding: 10px;
+    margin-left: -15px;
+  }
+  #creat_btn{
+    margin-left: -15px;
+  }
+  
+  .new_gifs {
+    position: absolute;
+    top: 215px;
+    /*right: 145px;*/
+}
+  
+  #new_creature{
+    margin-top: 10px;
+  }
+  }

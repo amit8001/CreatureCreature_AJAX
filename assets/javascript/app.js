@@ -40,6 +40,7 @@ function addChar(){
     newamlbtn.addClass("btn");
     newamlbtn.addClass("btn-primary");
     $("#creat_btn").append(newamlbtn);
+    $("#new_creature").val("");
 }
 
 //Handling the onclick event for one of the creature buttons
@@ -47,6 +48,7 @@ $(document).on("click", ".btn_creature",function(){
     gifStart=0;
   //  lmt = 0;
     $("#creature_gifs").empty();
+    $(".div_ld_new_img").remove();
     console.log("You clicked on "+$(this).text());
     //forming the query URL   
     var queryURL = "https://api.giphy.com/v1/gifs/search?q="+$(this).text()+"&api_key=dc6zaTOxFJmzC&limit=10";
@@ -58,6 +60,17 @@ $(document).on("click", ".btn_creature",function(){
         url: queryURL,
         method: "GET"
       }).then (load_gifs_api_call);
+
+      var div_ld_new_img = $("<div>");
+      div_ld_new_img.addClass("div_ld_new_img");
+      var btn_load_new = $("<button>");
+      btn_load_new.addClass("new_gifs");
+      btn_load_new.addClass("btn");
+      btn_load_new.addClass("btn-primary");
+      btn_load_new.text("Load More Images");   
+      div_ld_new_img.append(btn_load_new);
+      $(".col-sm-4").append(div_ld_new_img);
+
 })
 
 //Handling the onclick event on the "Load more images" button 
@@ -71,6 +84,15 @@ $(document).on("click", ".new_gifs",function(){
         method: "GET"
       }).then (load_gifs_api_call);
 
+    var div_ld_new_img = $("<div>");
+    div_ld_new_img.addClass("div_ld_new_img");
+    var btn_load_new = $("<button>");
+    btn_load_new.addClass("new_gifs");
+    btn_load_new.addClass("btn");
+    btn_load_new.addClass("btn-primary");
+    btn_load_new.text("Load More Images");   
+    div_ld_new_img.append(btn_load_new);
+    $(".col-sm-4").append(div_ld_new_img);
     });
 
 //Handling the "Play" and "Pause" state of the gifs when clicked
@@ -119,13 +141,13 @@ var load_gifs_api_call = function(response) {
         }
     }  
 
-    var div_ld_new_img = $("<div>");
-    div_ld_new_img.addClass("div_ld_new_img");
-    var btn_load_new = $("<button>");
-    btn_load_new.addClass("new_gifs");
-    btn_load_new.addClass("btn");
-    btn_load_new.addClass("btn-primary");
-    btn_load_new.text("Load More Images");   
-    div_ld_new_img.append(btn_load_new);
-    $("#creature_gifs").append(div_ld_new_img);
+    // var div_ld_new_img = $("<div>");
+    // div_ld_new_img.addClass("div_ld_new_img");
+    // var btn_load_new = $("<button>");
+    // btn_load_new.addClass("new_gifs");
+    // btn_load_new.addClass("btn");
+    // btn_load_new.addClass("btn-primary");
+    // btn_load_new.text("Load More Images");   
+    // div_ld_new_img.append(btn_load_new);
+    // $(".col-sm-4").append(div_ld_new_img);
     };
