@@ -1,6 +1,6 @@
 # CreatureCreature_AJAX
 
-Click on the creature buttons to load the gifs for the existing creature buttons. Then click on any of the images to see the fun!
+Click any of the existing creature buttons to load 10 gifs for that creature. Then click on any of the images to see the fun!
 You can click once to activate the gif image and click again on it to pause it.</br>
 
 You can also add new creature buttons by typing the name of the creature and hit the Submit button on the right side of the page.</br>
